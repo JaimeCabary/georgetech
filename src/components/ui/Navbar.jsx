@@ -1,11 +1,11 @@
 // src/components/ui/Navbar.jsx
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useTheme } from '../../contexts/ThemeContext';
+// import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useCart } from '../../contexts/CartContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobileAlt, faLaptop, faTv, faGamepad, faHeadphones, faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faMobileAlt, faLaptop, faTv, faGamepad, faHeadphones, faCompactDisc, faCartShopping, faHome, faBoxOpen, faUser, faRightToBracket, faGauge,faClipboardList, faRightFromBracket, faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from './ThemeToggle';
 import Logo from '../../assets/logo.png';
 
@@ -46,7 +46,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src={Logo} alt="George Tech Stores" className="h-10 w-10" />
-            <span className="text-white font-bold text-xl hidden sm:block">
+            <span className="text-white font-bold text-xl  sm:block">
               George Tech Stores
             </span>
           </Link>
@@ -131,7 +131,8 @@ const Navbar = () => {
               to="/cart" 
               className="px-3 py-2 text-white hover:bg-primary-light rounded-md relative"
             >
-              Cart
+              <FontAwesomeIcon icon={faCartShopping} className="mr-2" /> 
+
               {cartItemsCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                   {cartItemsCount}
@@ -147,9 +148,7 @@ const Navbar = () => {
               to="/cart" 
               className="text-white relative"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6h9M17 13v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6" />
-              </svg>
+              <FontAwesomeIcon icon={faCartShopping} className="mr-2" /> 
               {cartItemsCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                   {cartItemsCount}
@@ -185,18 +184,13 @@ const Navbar = () => {
                 onClick={() => handleNavigation('/home')}
                 className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
               >
-                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-                Home
+                <FontAwesomeIcon icon={faHome} className="mr-2 w-5 h-5" /> Home
               </button>
               <button
                 onClick={() => handleNavigation('/products')}
                 className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
               >
-                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" ry="2" strokeWidth={2}/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
-
-                Products
+                <FontAwesomeIcon icon={faBoxOpen} className="mr-2 w-5 h-5" /> Products
               </button>
               
               {user ? (
@@ -205,49 +199,33 @@ const Navbar = () => {
                     onClick={() => handleNavigation('/profile')}
                     className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
                   >
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                    Profile
+                     <FontAwesomeIcon icon={faUser} className="mr-2 w-5 h-5" /> Profile
                   </button>
                   <button
                     onClick={() => handleNavigation('/orders')}
                     className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
                   >
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                    Orders
+                    <FontAwesomeIcon icon={faClipboardList} className="mr-2" /> Orders
                   </button>
                   <button
                     onClick={() => handleNavigation('/payment-methods')}
                     className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
                   >
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                    </svg>
-                    Payment Methods
+                    <FontAwesomeIcon icon={faCreditCard} className="mr-2" /> Payment Methods
                   </button>
                   {user.role === 'admin' && (
                     <button
                       onClick={() => handleNavigation('/admin')}
                       className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
                     >
-                      <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      Admin Dashboard
+                      <FontAwesomeIcon icon={faGauge} className="mr-2 w-5 h-5" /> Admin Dashboard
                     </button>
                   )}
                   <button 
                     onClick={handleLogout}
                     className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
                   >
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                    </svg>
-                    Logout
+                    <FontAwesomeIcon icon={faRightFromBracket} className="mr-2 w-5 h-5" /> Logout
                   </button>
                 </>
               ) : (
@@ -255,11 +233,7 @@ const Navbar = () => {
                   onClick={() => handleNavigation('/login')}
                   className="px-3 py-2 text-white hover:bg-primary-light rounded-md text-left flex items-center"
                 >
-                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 8l4 4m0 0l-4 4m4-4H3m5-5V7a3 3 0 013-3h7a3 3 0 013 3v10a3 3 0 01-3 3h-7a3 3 0 01-3-3v-1"/>
-                  </svg>
-
-                  Login / Sign Up
+                  <FontAwesomeIcon icon={faRightToBracket} className="mr-2 w-5 h-5" /> Login / Signup
                 </button>
               )}
 
