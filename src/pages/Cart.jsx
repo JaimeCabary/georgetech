@@ -4,7 +4,7 @@ import Navbar from '../components/ui/Navbar';
 import { useCart } from '../contexts/CartContext';
 
 const Cart = () => {
-  const { items, updateQuantity, removeFromCart, getCartTotal, clearCart } = useCart();
+  const { items, updateQuantity, removeFromCart, getCartTotal } = useCart();
 
   const pageStyle = {
     minHeight: '100vh',
