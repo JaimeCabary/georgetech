@@ -47,50 +47,8 @@ export const brands = [
 export const featuredProducts = [
   {
     id: '1',
-    name: 'iPhone 16',
-    price: 999,
-    category: 'phones',
-    image: '/images/Iphone1.jpg',
-    brand: 'Apple',
-    description: 'The latest iPhone with amazing camera and performance',
-    inStock: true,
-    featured: true,
-    variants: ['128GB', '256GB', '512GB'],
-    rating: 4.8,
-    reviews: 1250
-  },
-  {
-    id: '2',
-    name: 'Samsung Galaxy S25',
-    price: 799,
-    category: 'phones',
-    image: '/images/25.jpg',
-    brand: 'Samsung',
-    description: 'Powerful Android phone with excellent display',
-    inStock: true,
-    featured: true,
-    variants: ['128GB', '256GB'],
-    rating: 4.6,
-    reviews: 890
-  },
-  {
-    id: '3',
-    name: 'MacBook Pro 16"',
-    price: 2399,
-    category: 'laptops',
-    image: '/images/mac16.jpeg',
-    brand: 'Apple',
-    description: 'Professional laptop for creators and developers',
-    inStock: true,
-    featured: true,
-    variants: ['M1 Pro', 'M1 Max'],
-    rating: 4.9,
-    reviews: 670
-  },
-  {
-    id: '4',
     name: 'PlayStation 5',
-    price: 499,
+    price: 848300,
     category: 'consoles',
     image: '/images/PS5.png',
     brand: 'Sony',
@@ -102,9 +60,51 @@ export const featuredProducts = [
     reviews: 2300
   },
   {
+    id: '2',
+    name: 'Samsung Galaxy S25',
+    price: 71363300,
+    category: 'phones',
+    image: '/images/s25u.png',
+    brand: 'Samsung',
+    description: 'Powerful Android phone with excellent display',
+    inStock: true,
+    featured: true,
+    variants: ['128GB', '256GB'],
+    rating: 4.6,
+    reviews: 890
+  },
+  {
+    id: '3',
+    name: 'Xbox Wireless Controller',
+    price: 100300,
+    category: 'gaming',
+    image: '/images/xbox.png',
+    brand: 'Microsoft',
+    description: 'Premium gaming controller for Xbox and PC',
+    inStock: true,
+    featured: true,
+    variants: ['Black', 'White', 'Blue'],
+    rating: 4.5,
+    reviews: 890
+  },
+  {
+    id: '4',
+    name: 'MacBook Pro 16"',
+    price: 4078300,
+    category: 'laptops',
+    image: '/images/mac16.jpeg',
+    brand: 'Apple',
+    description: 'Professional laptop for creators and developers',
+    inStock: true,
+    featured: true,
+    variants: ['M1 Pro', 'M1 Max'],
+    rating: 4.9,
+    reviews: 670
+  },
+  {
     id: '5',
     name: 'Sony 65" 4K TV',
-    price: 1299,
+    price: 2209300,
     category: 'tvs',
     image: '/images/sony4k.png',
     brand: 'Sony',
@@ -117,7 +117,7 @@ export const featuredProducts = [
   {
     id: '6',
     name: 'Airpods Max',
-    price: 199,
+    price: 599000,
     category: 'accessories',
     image: '/images/AirpodsMax.jpg',
     brand: 'Sony',
@@ -131,7 +131,7 @@ export const featuredProducts = [
   {
     id: '7',
     name: 'Redmi Note 15',
-    price: 299,
+    price: 508300,
     category: 'phones',
     image: '/images/redmi15.jpeg',
     brand: 'Redmi',
@@ -145,7 +145,7 @@ export const featuredProducts = [
   {
     id: '8',
     name: 'Oraimo Power Bank',
-    price: 49,
+    price:'  -',
     category: 'accessories',
     image: '/images/oraimo.jpg',
     brand: 'Oraimo',
@@ -159,7 +159,7 @@ export const featuredProducts = [
   {
     id: '9',
     name: 'PlayStation 4 Pro',
-    price: 299,
+    price: 508300,
     category: 'consoles',
     image: '/images/ps4.jpg',
     brand: 'Sony',
@@ -169,20 +169,20 @@ export const featuredProducts = [
     rating: 4.6,
     reviews: 1800
   },
-  {
-    id: '10',
-    name: 'Xbox Wireless Controller',
-    price: 59,
-    category: 'gaming',
-    image: '/images/xbox.png',
-    brand: 'Microsoft',
-    description: 'Premium gaming controller for Xbox and PC',
-    inStock: true,
-    featured: true,
-    variants: ['Black', 'White', 'Blue'],
-    rating: 4.5,
-    reviews: 890
-  }
+  // {
+  //   id: '10',
+  //   name: 'iPhone 16',
+  //   price: 1500000,
+  //   category: 'phones',
+  //   image: '/images/Iphone1.jpg',
+  //   brand: 'Apple',
+  //   description: 'The latest iPhone with amazing camera and performance',
+  //   inStock: true,
+  //   featured: true,
+  //   variants: ['128GB', '256GB', '512GB'],
+  //   rating: 4.8,
+  //   reviews: 1250
+  // }
 ];
 
 export const bestBrands = [

@@ -5,7 +5,8 @@
   --color-bg-secondary: #f8f9fa;
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #4a5568;
-  --color-primary: #8B0000; /* Deep red */
+  --color-primary: #FF4500; /* Deep red */
+  --color-primaro: #f6621d; /* Deep red */
   --color-secondary: #FF8C00; /* Orange */
   --color-accent: #FF4500; /* Orange-red */
   --color-border: #e2e8f0;
@@ -58,6 +59,7 @@
 }
 
 [data-theme="dark"] {
+  --color-primaro: #f6621d; /* Deep red */
   --color-bg-primary: #1a1a1a;
   --color-bg-secondary: #2d2d2d;
   --color-text-primary: #ffffff;

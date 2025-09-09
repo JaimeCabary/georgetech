@@ -49,9 +49,9 @@ const ProductCard = ({ product }) => {
           <span style={{ 
             fontSize: '1.25rem', 
             fontWeight: 'bold',
-            color: 'var(--color-primary)'
+            color: 'var(--color-primaro)'
           }}>
-            ${product.price}
+            ₦{product.price.toLocaleString()}
           </span>
           <button
             onClick={handleAddToCart}

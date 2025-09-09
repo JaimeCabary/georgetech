@@ -101,18 +101,21 @@ const ProductFilter = ({ filters, setFilters }) => {
           onClick={() => setFilters({
             category: '',
             minPrice: 0,
-            maxPrice: 5000,
+            maxPrice: 5000000,
             brand: ''
           })}
           style={{
             width: '100%',
-            padding: 'var(--spacing-md)',
-            backgroundColor: 'var(--color-text-secondary)',
+            padding: 'var(--spacing-sm)',
+            backgroundColor: '#FF4500',
             color: 'white',
             border: 'none',
             borderRadius: 'var(--radius-md)',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease'
           }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#E03E00'}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#FF4500'}
         >
           Clear Filters
         </button>
