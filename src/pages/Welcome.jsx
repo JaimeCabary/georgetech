@@ -634,9 +634,24 @@ const Welcome = () => {
   ];
 
   return (
+    
     <div className="min-h-screen bg-white dark:bg-dark-100">
       <Navbar />
-      
+          <Helmet>
+        <title>George Tech Stores - Buy & Sell Phones in Nigeria | iPhone & Samsung Experts</title>
+        <meta name="description" content="Nigeria's trusted store for Apple iPhones & Samsung Galaxy phones. ️We BUY, SELL, and SWAP. Free delivery in Owerri & across Nigeria. ✓Warranty ✓Best Prices. Call 0906 010 1978" />
+        <meta name="keywords" content="buy phone Nigeria, sell my phone Owerri, swap phone, Apple store Nigeria, Samsung dealer Abuja, iPhone price Lagos, Galaxy S23 Ultra, phone repair Nigeria, used phones Nigeria, cheap phones, authentic phones Nigeria, George Tech Stores" />
+        <meta property="og:title" content="George Tech Stores - Top Phone Store in Nigeria" />
+        <meta property="og:description" content="Best prices on iPhone 15, Samsung S24, and more. We Buy, Sell, Swap & Repair. Delivery Nigeria-wide." />
+        <meta property="og:image" content="https://www.yourwebsite.com/og-image-home.jpg" />
+        <meta property="og:url" content="https://www.georgetechstores.com/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="George Tech Stores - Top Phone Store in Nigeria" />
+        <meta name="twitter:description" content="Get the best deals on iPhones & Samsung phones in Nigeria. We Buy, Sell, Swap!" />
+        <meta name="twitter:image" content="https://www.yourwebsite.com/og-image-home.jpg" />
+        <link rel="canonical" href="https://www.georgetechstores.com/" />
+    </Helmet>
       {/* Hero Section with Full Screen Image */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Dark Overlay */}
