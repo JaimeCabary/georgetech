@@ -1,6 +1,7 @@
 // src/contexts/CartContext.js
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
+
 const CartContext = createContext();
 
 const cartReducer = (state, action) => {
@@ -82,6 +83,9 @@ export const CartProvider = ({ children }) => {
         quantity
       }
     });
+     if (window.showNotification) {
+    window.showNotification(`${product.name} added to cart`, 'success');
+  }
   };
 
   const removeFromCart = (productId, variant = '') => {
