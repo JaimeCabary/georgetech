@@ -1,7 +1,7 @@
 // src/pages/Cart.jsx - Updated with responsive fixes
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/ui/Navbar';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 // Add these imports at the top of your Cart.jsx file
 import { showNotification, sendBrowserNotification, setupPullToRefresh } from '../utils/notifications';
