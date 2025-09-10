@@ -830,54 +830,95 @@ const Cart = () => {
     }
   };
 
-  const handleCustomerDetailsSubmit = async (e) => {
-    e.preventDefault();
-    setIsProcessing(true);
+  // const handleCustomerDetailsSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsProcessing(true);
 
-    // Prepare order data
-    const orderData = {
-      items,
-      customerDetails,
-      subtotal: getCartTotal(),
-      shipping: shippingCost,
-      total: getCartTotal() + shippingCost,
-      orderDate: new Date().toLocaleString('en-NG'),
-      orderId: `GTS-${Date.now()}`
-    };
+  //   // Prepare order data
+  //   const orderData = {
+  //     items,
+  //     customerDetails,
+  //     subtotal: getCartTotal(),
+  //     shipping: shippingCost,
+  //     total: getCartTotal() + shippingCost,
+  //     orderDate: new Date().toLocaleString('en-NG'),
+  //     orderId: `GTS-${Date.now()}`
+  //   };
 
-    try {
-      // Send email notification (you'll need to implement this API endpoint)
-      // Change the fetch URL to point to your backend server
-      const response = await fetch(BACKEND_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderData),
-      });
+  //   try {
+  //     // Send email notification (you'll need to implement this API endpoint)
+  //     // Change the fetch URL to point to your backend server
+  //     const response = await fetch(BACKEND_URL, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(orderData),
+  //     });
 
-      if (response.ok) {
-        setCheckoutStep('payment');
+  //     if (response.ok) {
+  //       setCheckoutStep('payment');
         
-        // Send payment notification
-        if (Notification.permission === 'granted') {
-          sendBrowserNotification('Payment Details', {
-            body: 'Please complete your payment to finalize your order',
-            icon: '/logo192.png',
-            badge: '/logo192.png',
-            tag: 'payment-details'
-          });
-        }
-      } else {
-        throw new Error('Failed to process order');
-      }
-    } catch (error) {
-      console.error('Order processing error:', error);
-      showNotification('There was an error processing your order. Please try again.', 'error');
-    } finally {
-      setIsProcessing(false);
-    }
+  //       // Send payment notification
+  //       if (Notification.permission === 'granted') {
+  //         sendBrowserNotification('Payment Details', {
+  //           body: 'Please complete your payment to finalize your order',
+  //           icon: '/logo192.png',
+  //           badge: '/logo192.png',
+  //           tag: 'payment-details'
+  //         });
+  //       }
+  //     } else {
+  //       throw new Error('Failed to process order');
+  //     }
+  //   } catch (error) {
+  //     console.error('Order processing error:', error);
+  //     showNotification('There was an error processing your order. Please try again.', 'error');
+  //   } finally {
+  //     setIsProcessing(false);
+  //   }
+  // };
+
+  const handleCustomerDetailsSubmit = async (e) => {
+  e.preventDefault();
+  setIsProcessing(true);
+
+  // Prepare order data
+  const orderData = {
+    items,
+    customerDetails,
+    subtotal: getCartTotal(),
+    shipping: shippingCost,
+    total: getCartTotal() + shippingCost,
+    orderDate: new Date().toLocaleString('en-NG'),
+    orderId: `GTS-${Date.now()}`
   };
+
+  try {
+    // Send email notification - CORRECTED ENDPOINT
+    const response = await fetch(`${BACKEND_URL}/api/orders/send-order-email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(orderData),
+    });
+
+    const result = await response.json();
+    
+    if (response.ok) {
+      setCheckoutStep('payment');
+      showNotification('Order details submitted successfully!', 'success');
+    } else {
+      throw new Error(result.message || 'Failed to process order');
+    }
+  } catch (error) {
+    console.error('Order processing error:', error);
+    showNotification(error.message || 'There was an error processing your order. Please try again.', 'error');
+  } finally {
+    setIsProcessing(false);
+  }
+};
 
   const handlePaymentConfirmation = () => {
     setCheckoutStep('success');
@@ -1469,7 +1510,7 @@ const Cart = () => {
             )}
 
             {/* Payment Step */}
-            {checkoutStep === 'payment' && (
+            {/* {checkoutStep === 'payment' && (
               <div style={{ padding: 'var(--spacing-xl) var(--spacing-md)' }}>
                 <h2 style={{ 
                   marginBottom: 'var(--spacing-lg)',
@@ -1533,8 +1574,141 @@ const Cart = () => {
                   I Have Made Payment
                 </button>
               </div>
-            )}
+            )} */}
 
+            {/* // Payment Step with multiple options */}
+{checkoutStep === 'payment' && (
+  <div style={{ padding: 'var(--spacing-xl) var(--spacing-md)' }}>
+    <h2 style={{ 
+      marginBottom: 'var(--spacing-lg)',
+      color: 'var(--color-text-primary)',
+      fontSize: '1.5rem',
+      textAlign: 'center'
+    }}>
+      Choose Payment Method
+    </h2>
+    
+    {/* Payment Method Selection */}
+    <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+      <div style={{
+        padding: 'var(--spacing-md)',
+        border: '2px solid var(--color-primary)',
+        borderRadius: 'var(--radius-md)',
+        marginBottom: 'var(--spacing-md)',
+        cursor: 'pointer'
+      }}>
+        <h4 style={{ marginBottom: 'var(--spacing-sm)' }}>💰 Bank Transfer</h4>
+        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+          Transfer to our bank account
+        </p>
+      </div>
+      
+      <div style={{
+        padding: 'var(--spacing-md)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-md)',
+        marginBottom: 'var(--spacing-md)',
+        cursor: 'pointer',
+        opacity: 0.6
+      }}>
+        <h4 style={{ marginBottom: 'var(--spacing-sm)' }}>💳 Card Payment (Coming Soon)</h4>
+        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+          Pay securely with your debit/credit card
+        </p>
+      </div>
+      
+      <div style={{
+        padding: 'var(--spacing-md)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-md)',
+        marginBottom: 'var(--spacing-md)',
+        cursor: 'pointer',
+        opacity: 0.6
+      }}>
+        <h4 style={{ marginBottom: 'var(--spacing-sm)' }}>📱 USSD (Coming Soon)</h4>
+        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+          Pay using USSD code
+        </p>
+      </div>
+    </div>
+
+    {/* Bank Transfer Details */}
+    <div style={{
+      backgroundColor: 'var(--color-bg-secondary)',
+      padding: 'var(--spacing-lg)',
+      borderRadius: 'var(--radius-md)',
+      marginBottom: 'var(--spacing-lg)',
+      boxSizing: 'border-box'
+    }}>
+      <h3 style={{ marginBottom: 'var(--spacing-md)' }}>Bank Transfer Details</h3>
+      
+      <div style={{ marginBottom: 'var(--spacing-md)' }}>
+        <strong>Bank:</strong> First Bank Nigeria
+      </div>
+      <div style={{ marginBottom: 'var(--spacing-md)' }}>
+        <strong>Account Name:</strong> George Tech Stores Ltd
+      </div>
+      <div style={{ marginBottom: 'var(--spacing-md)' }}>
+        <strong>Account Number:</strong> 1234567890
+      </div>
+      <div style={{ marginBottom: 'var(--spacing-md)' }}>
+        <strong>Amount:</strong> {formatNaira(getCartTotal() + shippingCost)}
+      </div>
+      <div style={{ marginBottom: 'var(--spacing-md)' }}>
+        <strong>Reference:</strong> {`GTS-${Date.now()}`}
+      </div>
+      
+      {/* Receipt Upload Section */}
+      <div style={{ marginTop: 'var(--spacing-lg)' }}>
+        <h4 style={{ marginBottom: 'var(--spacing-sm)' }}>Upload Payment Receipt</h4>
+        <input
+          type="file"
+          accept="image/*,.pdf"
+          style={{
+            width: '100%',
+            padding: 'var(--spacing-sm)',
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-md)',
+            marginBottom: 'var(--spacing-sm)'
+          }}
+        />
+        <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>
+          Upload a screenshot or photo of your payment confirmation
+        </p>
+      </div>
+      
+      <div style={{
+        backgroundColor: '#fef3cd',
+        border: '1px solid #fbbf24',
+        borderRadius: 'var(--radius-sm)',
+        padding: 'var(--spacing-md)',
+        marginTop: 'var(--spacing-md)',
+        fontSize: '0.9rem'
+      }}>
+        <strong>Important:</strong> Please use the order reference above as your transfer description.
+        We will process your order once payment is confirmed.
+      </div>
+    </div>
+
+    <button
+      onClick={handlePaymentConfirmation}
+      style={{
+        width: '100%',
+        padding: 'var(--spacing-md)',
+        backgroundColor: '#10b981',
+        color: 'white',
+        border: 'none',
+        borderRadius: 'var(--radius-md)',
+        cursor: 'pointer',
+        fontWeight: '600',
+        fontSize: '1.125rem',
+        boxSizing: 'border-box'
+      }}
+    >
+      I Have Made Payment
+    </button>
+  </div>
+)}
             {/* Success Step */}
             {checkoutStep === 'success' && (
               <div style={{ 

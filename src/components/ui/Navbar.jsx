@@ -165,6 +165,17 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-4 ">
             <ThemeToggle />
             <Link 
+              to="/" 
+              className="text-white relative"
+              style={{
+                  transition: "transform 0.3s ease-in-out",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-4px)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+            >
+              <FontAwesomeIcon icon={faHome} className="mr-2" /> 
+            </Link>
+            <Link 
               to="/cart" 
               className="text-white relative"
               style={{

@@ -109,11 +109,14 @@ const transporter = nodemailer.createTransport({
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? process.env.FRONTEND_URL 
-    : 'http://localhost:3000',
+    : 'http://localhost:3001',
   credentials: true
 }));
-app.use(express.json());
-
+// app.use(express.json());
+// Add this near the top with other middleware
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use('/uploads', express.static('uploads'));
 // In-memory store for dismissed prompts (use a database in production)
 const dismissedPrompts = new Set();
 

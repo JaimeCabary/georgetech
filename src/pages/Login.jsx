@@ -218,12 +218,14 @@ import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import Navbar from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
+import { useNavigate } from 'react-router-dom'; // Add this import
 
 // Font Awesome imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
@@ -244,34 +246,44 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
+  // src/pages/Login.jsx (update the handleSubmit function)
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError('');
+  setLoading(true);
 
-    if (!isLogin && formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
-      setLoading(false);
-      return;
-    }
-
-    try {
-      if (isLogin) {
-        await login(formData.email, formData.password);
-      } else {
-        await signup(formData.email, formData.password);
-      }
-    } catch (error) {
-      setError(error.message);
-    }
+  if (!isLogin && formData.password !== formData.confirmPassword) {
+    setError('Passwords do not match');
     setLoading(false);
-  };
+    return;
+  }
+
+  try {
+    if (isLogin) {
+      const result = await login(formData.email, formData.password);
+      
+      // Check if it's an admin login
+      if (result.user && result.user.role === 'admin') {
+        navigate('/admin');
+      } else {
+        navigate('/profile');
+      }
+    } else {
+      await signup(formData.email, formData.password);
+      navigate('/profile');
+    }
+  } catch (error) {
+    setError(error.message);
+  }
+  setLoading(false);
+};
 
   const handleGoogleSignIn = async () => {
     try {
       setError('');
       setLoading(true);
       await googleSignIn();
+      navigate('/profile');
     } catch (error) {
       setError(error.message);
       setLoading(false);
