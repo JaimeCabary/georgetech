@@ -725,7 +725,7 @@ const Welcome = () => {
       </section>
 
       {/* About Us Section */}
-     <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-dark-200">
+     <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-dark-100 dark:to-dark-100">
   <div className="container mx-auto px-6">
     <div className="text-center max-w-4xl mx-auto">
       <div className="inline-flex items-center justify-center mb-4">
