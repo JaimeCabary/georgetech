@@ -173,10 +173,10 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   updateProfile as firebaseUpdateProfile,
-  // updateEmail,
-  // updatePassword,
-  // reauthenticateWithCredential,
-  // EmailAuthProvider
+   EmailAuthProvider,
+  reauthenticateWithCredential,
+  updateEmail as firebaseUpdateEmail,
+  updatePassword as firebaseUpdatePassword
 } from 'firebase/auth';
 import { 
   getStorage, 
@@ -253,6 +253,52 @@ export const AuthProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
   };
+  // Reauthenticate user (for password changes)
+const reauthenticate = async (password) => {
+  try {
+    if (user && user.role === 'admin') {
+      throw new Error('Admin users cannot reauthenticate with Firebase');
+    }
+    
+    const credential = EmailAuthProvider.credential(user.email, password);
+    await reauthenticateWithCredential(auth.currentUser, credential);
+    return true;
+  } catch (error) {
+    console.error('Error reauthenticating:', error);
+    throw error;
+  }
+};
+
+// Update email
+const updateEmail = async (newEmail) => {
+  try {
+    if (user && user.role === 'admin') {
+      throw new Error('Admin users cannot update email');
+    }
+    
+    await firebaseUpdateEmail(auth.currentUser, newEmail);
+    setUser({ ...auth.currentUser, email: newEmail });
+    return true;
+  } catch (error) {
+    console.error('Error updating email:', error);
+    throw error;
+  }
+};
+
+// Update password
+const updatePassword = async (newPassword) => {
+  try {
+    if (user && user.role === 'admin') {
+      throw new Error('Admin users cannot update password');
+    }
+    
+    await firebaseUpdatePassword(auth.currentUser, newPassword);
+    return true;
+  } catch (error) {
+    console.error('Error updating password:', error);
+    throw error;
+  }
+};
 
   // Update user profile
   const updateProfile = async (updates) => {
@@ -340,7 +386,10 @@ export const AuthProvider = ({ children }) => {
     googleSignIn,
     updateProfile,
     uploadAvatar,
-    deleteAvatar
+    deleteAvatar,
+    reauthenticate,      // Add this
+    updateEmail,         // Add this  
+    updatePassword,      // Add this
   };
 
   return (

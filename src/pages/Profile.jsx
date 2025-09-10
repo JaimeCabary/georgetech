@@ -105,39 +105,75 @@ const Profile = () => {
     }
   };
 
-  const handleSaveProfile = async () => {
-    setIsLoading(true);
-    try {
-      await updateProfile(userData);
+  // const handleSaveProfile = async () => {
+  //   setIsLoading(true);
+  //   try {
+  //     await updateProfile(userData);
       
-      // Log to backend
-      await fetch('/api/user/profile-update', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userId: user.uid,
-          updates: userData,
-          timestamp: new Date().toISOString()
-        })
-      });
+  //     // Log to backend
+  //     await fetch('/api/user/profile-update', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         userId: user.uid,
+  //         updates: userData,
+  //         timestamp: new Date().toISOString()
+  //       })
+  //     });
 
-      showNotification('Profile updated successfully!', 'success');
-      setIsEditing(false);
-    } catch (error) {
-      console.error('Error updating profile:', error);
-      showNotification('Failed to update profile. Please try again.', 'error');
-    }
-    setIsLoading(false);
-  };
+  //     showNotification('Profile updated successfully!', 'success');
+  //     setIsEditing(false);
+  //   } catch (error) {
+  //     console.error('Error updating profile:', error);
+  //     showNotification('Failed to update profile. Please try again.', 'error');
+  //   }
+  //   setIsLoading(false);
+  // };
+
+  const handleSaveProfile = async () => {
+  setIsLoading(true);
+  try {
+    await updateProfile(userData);
+
+    // Log to backend
+    await fetch('/api/user/profile-update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userId: user.uid,
+        updates: userData,
+        timestamp: new Date().toISOString()
+      })
+    });
+
+    // For admin users, we need to update the local state manually
+    // This is handled by the AuthContext's updateProfile function
+    // No need for manual setUser here
+
+    showNotification('Profile updated successfully!', 'success');
+    setIsEditing(false);
+  } catch (error) {
+    console.error('Error updating profile:', error);
+    showNotification('Failed to update profile. Please try again.', 'error');
+  }
+  setIsLoading(false);
+};
+
 
   const handleChangePassword = async () => {
-    if (securityData.newPassword !== securityData.confirmPassword) {
-      showNotification('New passwords do not match', 'error');
-      return;
-    }
+  if (securityData.newPassword !== securityData.confirmPassword) {
+    showNotification('New passwords do not match', 'error');
+    return;
+  }
 
+  if (user && user.role === 'admin') {
+    showNotification('Admin password cannot be changed here', 'info');
+    return;
+  }
     setIsLoading(true);
     try {
       // Reauthenticate user first
@@ -198,8 +234,11 @@ const Profile = () => {
   };
 
   const handleSaveAvatar = async () => {
-    if (avatarEditor) {
+  if (avatarEditor) {
+    try {
+      setIsLoading(true);
       const canvas = avatarEditor.getImageScaledToCanvas();
+      
       canvas.toBlob(async (blob) => {
         try {
           // Use the uploadAvatar function from AuthContext
@@ -207,13 +246,29 @@ const Profile = () => {
           showNotification('Profile picture updated successfully!', 'success');
           setShowAvatarEditor(false);
           setAvatarFile(null);
+          
+          // Force a re-render by updating user data
+          if (user) {
+            setUserData(prev => ({
+              ...prev,
+              // This will trigger a re-render of the avatar
+              avatarUpdated: Date.now() // Add a timestamp to force update
+            }));
+          }
         } catch (error) {
           console.error('Error uploading avatar:', error);
           showNotification('Failed to update profile picture', 'error');
+        } finally {
+          setIsLoading(false);
         }
       }, 'image/jpeg', 0.9);
+    } catch (error) {
+      console.error('Error processing avatar:', error);
+      setIsLoading(false);
+      showNotification('Failed to process image', 'error');
     }
-  };
+  }
+};
 
   const setEditorRef = (editor) => {
     if (editor) {
@@ -241,9 +296,10 @@ const Profile = () => {
               <div className="w-32 h-32 rounded-full bg-gradient-to-r from-primary-dark to-secondary flex items-center justify-center relative overflow-hidden">
                 {user?.photoURL ? (
                   <img 
-                    src={user.photoURL} 
+                    src={`${user.photoURL}?${userData.avatarUpdated || Date.now()}`} 
                     alt="Profile" 
                     className="w-full h-full object-cover"
+                    key={userData.avatarUpdated} // Force re-render when avatar updates
                   />
                 ) : (
                   <span className="text-white text-4xl">
@@ -848,23 +904,25 @@ const Profile = () => {
               </div>
             </div>
             
-            <div className="flex justify-end space-x-3">
-              <button
-                onClick={() => {
-                  setShowAvatarEditor(false);
-                  setAvatarFile(null);
-                }}
-                className="px-4 py-2 bg-gray-300 dark:bg-dark-400 text-gray-800 dark:text-white rounded-lg hover:bg-gray-400 dark:hover:bg-dark-500 transition"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSaveAvatar}
-                className="px-4 py-2 bg-[#FF4500] text-white rounded-lg hover:bg-[#E03E00] transition"
-              >
-                Save Avatar
-              </button>
-            </div>
+<div className="flex justify-end space-x-3">
+  <button
+    onClick={() => {
+      setShowAvatarEditor(false);
+      setAvatarFile(null);
+    }}
+    disabled={isLoading}
+    className="px-4 py-2 bg-gray-300 dark:bg-dark-400 text-gray-800 dark:text-white rounded-lg hover:bg-gray-400 dark:hover:bg-dark-500 transition disabled:opacity-50"
+  >
+    Cancel
+  </button>
+  <button
+    onClick={handleSaveAvatar}
+    disabled={isLoading}
+    className="px-4 py-2 bg-[#FF4500] text-white rounded-lg hover:bg-[#E03E00] transition disabled:opacity-50"
+  >
+    {isLoading ? 'Saving...' : 'Save Avatar'}
+  </button>
+</div>
           </div>
         </div>
       )}
