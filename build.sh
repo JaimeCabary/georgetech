@@ -1,13 +1,17 @@
 #!/bin/bash
-echo "Installing frontend dependencies..."
+
+# Install root dependencies
+echo "Installing root dependencies..."
 npm install
 
+# Build frontend
 echo "Building frontend..."
 npm run build
 
+# Install backend dependencies
 echo "Installing backend dependencies..."
 cd backend
 npm install
 cd ..
-This setup will work perfectly for Render deployment. The build script will install both frontend and backend dependencies separately.
 
+echo "Build completed successfully!"

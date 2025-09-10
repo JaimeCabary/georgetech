@@ -27,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -35,7 +35,7 @@
     "build:backend": "cd backend && npm install",
     "build:frontend": "npm install && npm run build",
     "start:backend": "cd backend && node server.js",
-    "start": "npm run build:frontend && npm run start:backend"
+    "start:full": "npm run build:frontend && npm run start:backend"
   },
   "eslintConfig": {
     "extends": [
