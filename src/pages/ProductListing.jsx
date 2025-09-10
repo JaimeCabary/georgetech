@@ -108,7 +108,7 @@ const ProductListing = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-100">
+    <div className="min-h-screen bg-white dark:bg-dark-100 font-[Orbitron]">
       <Navbar />
       
       {/* Page Header - More Spacing */}
@@ -135,7 +135,7 @@ const ProductListing = () => {
             <input
               type="text"
               placeholder="Search products..."
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FF4500] dark:focus:ring-[#FF8C00]"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FF4500] dark:focus:ring-[#FF4500]"
               value={filters.searchQuery}
               onChange={(e) => setFilters({...filters, searchQuery: e.target.value})}
             />

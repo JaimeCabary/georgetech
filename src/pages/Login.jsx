@@ -279,7 +279,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container font-[Orbitron]">
       <Navbar />
       
       <div className="login-content">

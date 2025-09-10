@@ -1,6 +1,7 @@
 // src/pages/Cart.jsx - Updated with responsive fixes
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/ui/Navbar';
+import { Link } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 // Add these imports at the top of your Cart.jsx file
 import { showNotification, sendBrowserNotification, setupPullToRefresh } from '../utils/notifications';
@@ -19,7 +20,7 @@ const Cart = () => {
     state: ''
   });
  const BACKEND_URL = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:5000'
+    ? 'http://localhost:5001'
     : 'https://georgetech.onrender.com';
 
   // Prevent background scrolling when modal is open
@@ -132,7 +133,7 @@ const Cart = () => {
 
   if (items.length === 0) {
     return (
-      <div style={pageStyle}>
+      <div style={pageStyle} className='font-[Orbitron]'>
         <Navbar />
         <div style={{ padding: 'var(--spacing-2xl) 0', textAlign: 'center' }}>
           <h2 style={{ color: 'var(--color-text-primary)', marginBottom: 'var(--spacing-md)' }}>
@@ -153,7 +154,7 @@ const Cart = () => {
   }
 
   return (
-    <div style={pageStyle}>
+    <div style={pageStyle} className='font-[Orbitron]'>
       <Navbar />
       
       <div style={contentStyle}>

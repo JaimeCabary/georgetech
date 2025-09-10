@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50">
       {/* Main Navbar */}
-      <nav className={`bg-gradient-to-r from-[#8B0000] to-[#FF4500] dark:bg-gradient-to-r dark:from-dark-200 dark:to-dark-100 py-4 px-6 shadow-lg`}>
+      <nav className={`bg-gradient-to-r from-[#8B0000] to-[#FF4500] dark:bg-gradient-to-r dark:from-dark-200 dark:to-dark-100 py-4 px-6 shadow-lg font-[Orbitron]`}>
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
@@ -162,7 +162,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-4 ">
             <ThemeToggle />
             <Link 
               to="/cart" 
@@ -201,7 +201,7 @@ const Navbar = () => {
 
       {/* Mobile Menu - As extension of header */}
       {isMobileMenuOpen && (
-        <div className="md:hidden shadow-lg bg-gradient-to-r from-[#8B0000] to-[#FF4500] dark:from-[#434343] dark:to-[#000000]">
+        <div className="md:hidden shadow-lg bg-gradient-to-r from-[#8B0000] to-[#FF4500] dark:from-[#434343] dark:to-[#000000] font-[Orbitron]">
           <div className="container mx-auto px-6 py-4">
             <div className="flex flex-col space-y-3">
               {/* Main Navigation */}

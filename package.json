@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/orbitron": "^5.2.7",
     "@fortawesome/fontawesome-svg-core": "^7.0.1",
     "@fortawesome/free-brands-svg-icons": "^7.0.1",
     "@fortawesome/free-regular-svg-icons": "^7.0.1",
@@ -23,6 +24,8 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^11.0.5",
     "react-use": "^17.6.0",
+    "sqlite3": "^5.1.7",
+    "uuid": "^13.0.0",
     "web-push": "^3.6.7",
     "web-vitals": "^2.1.4"
   },
@@ -35,7 +38,9 @@
     "build:backend": "cd backend && npm install",
     "build:frontend": "npm install && npm run build",
     "start:backend": "cd backend && node server.js",
-    "start:full": "npm run build:frontend && npm run start:backend"
+    "start:full": "npm run build:frontend && npm run start:backend",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --ignore-pattern 'public/sw.js'",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix --ignore-pattern 'public/sw.js'"
   },
   "eslintConfig": {
     "extends": [

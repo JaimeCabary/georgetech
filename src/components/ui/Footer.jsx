@@ -151,7 +151,7 @@ const Footer = () => {
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-300 focus:outline-none focus:ring-2 focus:ring-[#FF4500] dark:focus:ring-[#FF8C00]"
+                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-300 focus:outline-none focus:ring-2 focus:ring-[#FF4500] dark:focus:ring-[#FF4500]"
                   required
                 />
                 <button 

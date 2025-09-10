@@ -129,7 +129,7 @@
           
 //           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
 //             <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-//               <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
+//               <div className="text-4xl text-[#FF4500] dark:text-[#FF4500] mb-4">
 //                 <FontAwesomeIcon icon="fa-solid fa-tags" />
 //               </div>
 //               <h3 className="text-xl font-semibold mb-2 dark:text-white">Best Prices</h3>
@@ -137,7 +137,7 @@
 //             </div>
             
 //             <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-//               <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
+//               <div className="text-4xl text-[#FF4500] dark:text-[#FF4500] mb-4">
 //                 <FontAwesomeIcon icon="fa-solid fa-shield-alt" />
 //               </div>
 //               <h3 className="text-xl font-semibold mb-2 dark:text-white">Warranty</h3>
@@ -145,7 +145,7 @@
 //             </div>
             
 //             <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-//               <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
+//               <div className="text-4xl text-[#FF4500] dark:text-[#FF4500] mb-4">
 //                 <FontAwesomeIcon icon="fa-solid fa-headset" />
 //               </div>
 //               <h3 className="text-xl font-semibold mb-2 dark:text-white">Support</h3>
@@ -185,7 +185,7 @@
 //               to={`/products?category=${category.id}`}
 //               className="bg-white dark:bg-dark-300 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition transform hover:scale-105 dark:text-white group"
 //             >
-//               <div className="text-4xl mb-4 text-[#FF4500] dark:text-[#FF8C00] group-hover:text-[#E03E00] transition">
+//               <div className="text-4xl mb-4 text-[#FF4500] dark:text-[#FF4500] group-hover:text-[#E03E00] transition">
 //                 <FontAwesomeIcon icon={category.icon} />
 //               </div>
 //               <h3 className="text-xl font-semibold">{category.name}</h3>
@@ -202,7 +202,7 @@
 //             {testimonials.map(testimonial => (
 //               <div key={testimonial.id} className="bg-white dark:bg-dark-300 p-6 rounded-lg shadow-md">
 //                 <div className="flex items-center mb-4">
-//                   <div className="w-12 h-12 rounded-full bg-[#FF4500] dark:bg-[#FF8C00] flex items-center justify-center text-white font-bold mr-4">
+//                   <div className="w-12 h-12 rounded-full bg-[#FF4500] dark:bg-[#FF4500] flex items-center justify-center text-white font-bold mr-4">
 //                     {testimonial.name.charAt(0)}
 //                   </div>
 //                   <div>
@@ -413,7 +413,7 @@
           
 // //           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
 // //             <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-// //               <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
+// //               <div className="text-4xl text-[#FF4500] dark:text-[#FF4500] mb-4">
 // //                 <FontAwesomeIcon icon="fa-solid fa-tags" />
 // //               </div>
 // //               <h3 className="text-xl font-semibold mb-2 dark:text-white">Best Prices</h3>
@@ -421,7 +421,7 @@
 // //             </div>
             
 // //             <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-// //               <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
+// //               <div className="text-4xl text-[#FF4500] dark:text-[#FF4500] mb-4">
 // //                 <FontAwesomeIcon icon="fa-solid fa-shield-alt" />
 // //               </div>
 // //               <h3 className="text-xl font-semibold mb-2 dark:text-white">Warranty</h3>
@@ -429,7 +429,7 @@
 // //             </div>
             
 // //             <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-// //               <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
+// //               <div className="text-4xl text-[#FF4500] dark:text-[#FF4500] mb-4">
 // //                 <FontAwesomeIcon icon="fa-solid fa-headset" />
 // //               </div>
 // //               <h3 className="text-xl font-semibold mb-2 dark:text-white">Support</h3>
@@ -469,7 +469,7 @@
 // //               to={`/products?category=${category.id}`}
 // //               className="bg-white dark:bg-dark-300 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition transform hover:scale-105 dark:text-white group"
 // //             >
-// //               <div className="text-4xl mb-4 text-[#FF4500] dark:text-[#FF8C00] group-hover:text-[#E03E00] transition">
+// //               <div className="text-4xl mb-4 text-[#FF4500] dark:text-[#FF4500] group-hover:text-[#E03E00] transition">
 // //                 <FontAwesomeIcon icon={category.icon} />
 // //               </div>
 // //               <h3 className="text-xl font-semibold">{category.name}</h3>
@@ -486,7 +486,7 @@
 // //             {testimonials.map(testimonial => (
 // //               <div key={testimonial.id} className="bg-white dark:bg-dark-300 p-6 rounded-lg shadow-md">
 // //                 <div className="flex items-center mb-4">
-// //                   <div className="w-12 h-12 rounded-full bg-[#FF4500] dark:bg-[#FF8C00] flex items-center justify-center text-white font-bold mr-4">
+// //                   <div className="w-12 h-12 rounded-full bg-[#FF4500] dark:bg-[#FF4500] flex items-center justify-center text-white font-bold mr-4">
 // //                     {testimonial.name.charAt(0)}
 // //                   </div>
 // //                   <div>
@@ -584,8 +584,9 @@
 
 // // export default Welcome;
 
+// src/pages/Welcome.jsx// 
 // src/pages/Welcome.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Navbar from '../components/ui/Navbar';
@@ -593,6 +594,18 @@ import ProductCard from '../components/ProductCard';
 import { featuredProducts, categories } from '../utils/constants';
 import Footer from '../components/ui/Footer';
 import { Helmet } from 'react-helmet';
+import { setBadgeCount, sendBrowserNotification } from '../utils/notifications';
+import { faTags, faShieldAlt, faHeadset } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+
+// Test notification
+const testNotification = () => {
+  sendBrowserNotification('Test Notification', {
+    body: 'Hello from George Tech Stores, Welcome aboard.',
+    tag: 'test-notification'
+  });
+  setBadgeCount(1); // Add badge count
+};
 
 const Welcome = () => {
   // Filter categories to only show the requested ones
@@ -600,25 +613,37 @@ const Welcome = () => {
     ['phones', 'laptops', 'accessories', 'gaming', 'consoles'].includes(cat.id)
   );
 
+  // Trigger notification after 20 seconds
+  useEffect(() => {
+    const notificationTimer = setTimeout(() => {
+      testNotification();
+    }, 20000); // 20 seconds
+
+    // Cleanup function to clear timeout if component unmounts
+    return () => {
+      clearTimeout(notificationTimer);
+    };
+  }, []); // Empty dependency array means this runs once on mount
+
   // Customer testimonials
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Chimaobi Godswill",
       comment: "Best electronics store in town! Got my PS5 here when it was sold out everywhere else.",
       rating: 5,
       image: "/customers/customer1.jpg"
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Michael Obinna",
       comment: "Knowledgeable staff and competitive prices. Will definitely shop here again.",
       rating: 5,
       image: "/customers/customer2.jpg"
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
+      name: "Chimmuanya Edom",
       comment: "Love their warranty policy. Gives me peace of mind with expensive electronics.",
       rating: 4,
       image: "/customers/customer3.jpg"
@@ -634,12 +659,11 @@ const Welcome = () => {
   ];
 
   return (
-    
-    <div className="min-h-screen bg-white dark:bg-dark-100">
+    <div className="min-h-screen bg-white dark:bg-dark-100 font-[Orbitron]">
       <Navbar />
-          <Helmet>
+      <Helmet>
         <title>George Tech Stores - Buy & Sell Phones in Nigeria | iPhone & Samsung Experts</title>
-        <meta name="description" content="Nigeria's trusted store for Apple iPhones & Samsung Galaxy phones. ️We BUY, SELL, and SWAP. Free delivery in Owerri & across Nigeria. ✓Warranty ✓Best Prices. Call 0906 010 1978" />
+        <meta name="description" content="Nigeria's trusted store for Apple iPhones & Samsung Galaxy phones. We BUY, SELL, and SWAP. Free delivery in Owerri & across Nigeria. ✓Warranty ✓Best Prices. Call 0906 010 1978" />
         <meta name="keywords" content="buy phone Nigeria, sell my phone Owerri, swap phone, Apple store Nigeria, Samsung dealer Abuja, iPhone price Lagos, Galaxy S23 Ultra, phone repair Nigeria, used phones Nigeria, cheap phones, authentic phones Nigeria, George Tech Stores" />
         <meta property="og:title" content="George Tech Stores - Top Phone Store in Nigeria" />
         <meta property="og:description" content="Best prices on iPhone 15, Samsung S24, and more. We Buy, Sell, Swap & Repair. Delivery Nigeria-wide." />
@@ -651,7 +675,8 @@ const Welcome = () => {
         <meta name="twitter:description" content="Get the best deals on iPhones & Samsung phones in Nigeria. We Buy, Sell, Swap!" />
         <meta name="twitter:image" content="https://www.yourwebsite.com/og-image-home.jpg" />
         <link rel="canonical" href="https://www.georgetechstores.com/" />
-    </Helmet>
+      </Helmet>
+      
       {/* Hero Section with Full Screen Image */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Dark Overlay */}
@@ -666,10 +691,13 @@ const Welcome = () => {
         </div>
         {/* Hero Content */}
         <div className="container mx-auto px-6 text-center relative z-10 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Welcome to <span className="text-[#FF4500] dark:text-[#FF4500] ">George Tech Stores</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in font-[Orbitron]">
+            Welcome to{" "}
+            <span className="bg-gradient-to-r from-white via-orange-400 to-[#FF4500] bg-clip-text text-transparent font-[Orbitron]">
+              George Tech Stores
+            </span>
           </h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto ">
             Your premier destination for cutting-edge electronics, gaming gear, and tech accessories. <br />
             <span>We sell, We buy and We swap.</span>
           </p>
@@ -690,53 +718,72 @@ const Welcome = () => {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div>
+       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
+        <FontAwesomeIcon icon={faArrowDown} className="w-6 h-6 translate-x-[1px]" />
+      </div>
+
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 dark:text-white">About George Tech Stores</h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            Founded in 2010, George Tech Stores has grown from a small electronics shop to the region's leading technology retailer. 
-            We specialize in phones, laptops, gaming consoles, and accessories from top brands worldwide.
-          </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300">
-            Our knowledgeable staff are tech enthusiasts who love helping customers find the perfect products. 
-            We offer competitive prices, expert advice, and excellent after-sales support.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-              <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
-                <FontAwesomeIcon icon="fa-solid fa-tags" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">Best Prices</h3>
-              <p className="text-gray-600 dark:text-gray-400">Competitive pricing on all top brands</p>
-            </div>
-            
-            <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-              <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
-                <FontAwesomeIcon icon="fa-solid fa-shield-alt" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">Warranty</h3>
-              <p className="text-gray-600 dark:text-gray-400">Extended warranty on all products</p>
-            </div>
-            
-            <div className="text-center p-6 bg-gray-50 dark:bg-dark-200 rounded-lg">
-              <div className="text-4xl text-[#FF4500] dark:text-[#FF8C00] mb-4">
-                <FontAwesomeIcon icon="fa-solid fa-headset" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">Support</h3>
-              <p className="text-gray-600 dark:text-gray-400">Expert technical support team</p>
-            </div>
+     <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-dark-200">
+  <div className="container mx-auto px-6">
+    <div className="text-center max-w-4xl mx-auto">
+      <div className="inline-flex items-center justify-center mb-4">
+        <div className="w-12 h-1 bg-[#FF4500] mr-4"></div>
+        <span className="text-sm font-semibold tracking-wider text-[#FF4500] uppercase">About Us</span>
+        <div className="w-12 h-1 bg-[#FF4500] ml-4"></div>
+      </div>
+      
+      <h2 className="text-4xl md:text-5xl font-bold mb-8 dark:text-white relative">
+        About George Tech Stores
+        {/* <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#FF4500]"></span> */}
+      </h2>
+      
+      <div className="space-y-6 mb-12">
+        <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+          George Tech Stores has grown from a small electronics shop to the region's leading technology retailer. 
+          We specialize in phones, laptops, gaming consoles, and accessories from top brands worldwide.
+        </p>
+        <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+          Our knowledgeable staff are tech enthusiasts who love helping customers find the perfect products. 
+          We offer competitive prices, expert advice, and excellent after-sales support.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="text-center p-8 bg-white dark:bg-dark-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-orange-100  dark:bg-orange-900/20 text-3xl text-[#FF4500] dark:text-[#FF4500] mb-6">
+            <FontAwesomeIcon icon={faTags} />
           </div>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-white">Best Prices</h3>
+          <p className="text-gray-600 dark:text-gray-400">Competitive pricing on all top brands</p>
         </div>
-      </section>
+        
+        <div className="text-center p-8 bg-white dark:bg-dark-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-900/20 text-3xl text-[#FF4500] dark:text-[#FF4500] mb-6">
+            <FontAwesomeIcon icon={faShieldAlt} />
+          </div>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-white">Warranty</h3>
+          <p className="text-gray-600 dark:text-gray-400">Extended warranty on all products</p>
+        </div>
+        
+        <div className="text-center p-8 bg-white dark:bg-dark-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-900/20 text-3xl text-[#FF4500] dark:text-[#FF4500] mb-6">
+            <FontAwesomeIcon icon={faHeadset} />
+          </div>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-white">Support</h3>
+          <p className="text-gray-600 dark:text-gray-400">Expert technical support team</p>
+        </div>
+      </div>
+      
+      <div className="mt-16 pt-12 border-t border-gray-200 dark:border-gray-700">
+        <button className="px-8 py-3 bg-[#FF4500] text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300">
+          Learn More About Us
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Featured Products */}
       <section className="py-16 bg-gray-50 dark:bg-dark-200">
@@ -768,7 +815,7 @@ const Welcome = () => {
               to={`/products?category=${category.id}`}
               className="bg-white dark:bg-dark-300 p-6 rounded-lg shadow-md text-center hover:shadow-lg transition transform hover:scale-105 dark:text-white group"
             >
-              <div className="text-4xl mb-4 text-[#FF4500] dark:text-[#FF8C00] group-hover:text-[#E03E00] transition">
+              <div className="text-4xl mb-4 text-[#FF4500] dark:text-[#FF4500] group-hover:text-[#E03E00] transition">
                 <FontAwesomeIcon icon={category.icon} />
               </div>
               <h3 className="text-xl font-semibold">{category.name}</h3>
@@ -785,7 +832,7 @@ const Welcome = () => {
             {testimonials.map(testimonial => (
               <div key={testimonial.id} className="bg-white dark:bg-dark-300 p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#FF4500] dark:bg-[#FF8C00] flex items-center justify-center text-white font-bold mr-4">
+                  <div className="w-12 h-12 rounded-full bg-[#FF4500] dark:bg-[#FF4500] flex items-center justify-center text-white font-bold mr-4">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
