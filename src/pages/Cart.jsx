@@ -20,7 +20,7 @@ const Cart = () => {
   });
  const BACKEND_URL = process.env.NODE_ENV === 'development'
     ? 'http://localhost:5000'
-    : 'https://georgey.onrender.com';
+    : 'https://georgetech.onrender.com';
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
