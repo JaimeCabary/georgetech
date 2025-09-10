@@ -596,7 +596,6 @@ import Footer from '../components/ui/Footer';
 import { Helmet } from 'react-helmet';
 import { setBadgeCount, sendBrowserNotification } from '../utils/notifications';
 import { faTags, faShieldAlt, faHeadset } from '@fortawesome/free-solid-svg-icons';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 // Test notification
 const testNotification = () => {
@@ -667,14 +666,14 @@ const Welcome = () => {
         <meta name="keywords" content="buy phone Nigeria, sell my phone Owerri, swap phone, Apple store Nigeria, Samsung dealer Abuja, iPhone price Lagos, Galaxy S23 Ultra, phone repair Nigeria, used phones Nigeria, cheap phones, authentic phones Nigeria, George Tech Stores" />
         <meta property="og:title" content="George Tech Stores - Top Phone Store in Nigeria" />
         <meta property="og:description" content="Best prices on iPhone 15, Samsung S24, and more. We Buy, Sell, Swap & Repair. Delivery Nigeria-wide." />
-        <meta property="og:image" content="https://www.yourwebsite.com/og-image-home.jpg" />
-        <meta property="og:url" content="https://www.georgetechstores.com/" />
+        <meta property="og:image" content="https://www.georgetechstores.netlify.app/logo.png" />
+        <meta property="og:url" content="https://www.georgetechstores.netlify.app/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="George Tech Stores - Top Phone Store in Nigeria" />
         <meta name="twitter:description" content="Get the best deals on iPhones & Samsung phones in Nigeria. We Buy, Sell, Swap!" />
-        <meta name="twitter:image" content="https://www.yourwebsite.com/og-image-home.jpg" />
-        <link rel="canonical" href="https://www.georgetechstores.com/" />
+        <meta name="twitter:image" content="https://www.georgetechstores.netlify.app/logo.png" />
+        <link rel="canonical" href="https://www.georgetechstores.netlify.app/" />
       </Helmet>
       
       {/* Hero Section with Full Screen Image */}
@@ -718,9 +717,9 @@ const Welcome = () => {
         </div>
         
         {/* Scroll Indicator */}
-       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
-        <FontAwesomeIcon icon={faArrowDown} className="w-6 h-6 translate-x-[1px]" />
-      </div>
+       {/* <div className="absolute bottom-10 mr-5 -translate-x-1/2 text-white animate-bounce">
+        <FontAwesomeIcon icon={faArrowDown} className="w-10 h-10 " />
+      </div> */}
 
       </section>
 
