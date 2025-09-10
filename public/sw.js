@@ -151,7 +151,64 @@ const showPeriodicNotification = async () => {
       title: 'George Tech Stores',
       body: 'Discover the latest gadgets and electronics!',
       data: { url: '/products' }
-    }
+    },
+{
+    title: 'George Tech Stores',
+    body: 'Welcome back! Explore amazing deals today.',
+    data: { url: '/' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'New tech deals available! Check out our latest offers.',
+    data: { url: '/products' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Hot gadgets just arrived! Don’t miss out.',
+    data: { url: '/products' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Your cart is waiting! Complete your purchase today.',
+    data: { url: '/cart' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Check out this amazing product just for you!',
+    data: { url: '/product/1' } // Example, dynamic product id
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Manage your profile and keep your info up to date.',
+    data: { url: '/profile' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Track your recent orders easily in one place.',
+    data: { url: '/orders' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Secure your payments with saved payment methods.',
+    data: { url: '/payment-methods' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Stay on top of your spending — check your transactions.',
+    data: { url: '/transactions' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Leave a rating! Share your feedback with us.',
+    data: { url: '/ratings' }
+  },
+  {
+    title: 'George Tech Stores',
+    body: 'Browse top brands and find your favorites.',
+    data: { url: '/brands' }
+  }
+
+
   ];
 
   const randomNotification = notifications[Math.floor(Math.random() * notifications.length)];
